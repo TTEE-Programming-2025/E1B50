@@ -21,7 +21,7 @@ for(i=0;i<n;i++){
 	printf("  ~     ~  /|||||\\\\    ~      ~    \n");
 	printf("    ~~ // /||||||\\\\\\   // // ~    \n");
 	printf("//.,,.//,//|||||||\\\\\\,//.//,//,/,\n");
-
+	printf("請輸入四位數密碼:");
 do{
 	for(int i=1;i<5;i++){
         password[i]=getche();
@@ -122,7 +122,7 @@ char choice;
                         	printf("輸入錯誤！請按 'y' 或 'n'。\n");
                         getch();
                     }
-                }while (1);
+                }while(1);
                 break;
             }
             default:
