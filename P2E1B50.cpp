@@ -47,12 +47,11 @@ char choice;
         printf("| c. 結束                |\n");
         printf("--------------------------\n");
         printf("請選擇選項 (a/b/c): ");
-        choice = getch();            // 讀取單一按鍵
-        printf("%c\n\n", choice);    // 顯示使用者按鍵
+        choice=getch();
         
 switch (choice) {
             case 'a': case 'A': {
-                // 3. 畫直角三角形
+                // 畫直角三角形
                 char ch;
                 int N;
                 do {
@@ -68,20 +67,26 @@ switch (choice) {
                 } while (ch < 'a' || ch > 'n');
 
                 N = ch - 'a' + 1;
+                
                 for (i = 1; i <= N; i++) {
                     char start = ch - i + 1;
                     int j;
+                for (int s = 0; s < N - i; s++)
+				{
+        		putchar(' ');//讓直角三角形靠右 
+				}
                     for (j = start; j <= ch; j++) {
-                        putchar(j);
+                        printf("%c",j);
                     }
                     putchar('\n');
                 }
+            
                 printf("\n按任意鍵返回主選單...");
                 getch();
                 break;
             }
             case 'b': case 'B': {
-                // 4. 顯示乘法表
+                // 顯示乘法表
                 int n;
                 do {
                     system("cls");
