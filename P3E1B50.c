@@ -37,7 +37,7 @@ int main(void) {
     char choice;
     int password, attempts = 0;
 
-    /* Step 1: Welcome screen + password */
+    /* (1): Welcome screen + password */
     displayWelcome();
     while (attempts < 3) {
         if (scanf("%d", &password) != 1) {
@@ -61,7 +61,7 @@ int main(void) {
     /* Initialize 10 random reserved seats */
     initSeats(seats);
 
-   /* Main menu loop */
+   /* (2)Main menu loop */
     do{
         clearScreen();
         printf("----------[Booking System]----------\n");
@@ -71,13 +71,15 @@ int main(void) {
         printf("| d. Exit                          |\n");
         printf("------------------------------------\n");
         printf("Enter choice: ");
+
         while (getchar() != '\n');
         choice = getchar();
         switch (choice) {
-            case 'a': case 'A': optionAvailable(seats); break;
-            case 'b': case 'B': optionAutoArrange(seats); break;
-            case 'c': case 'C': optionManualChoose(seats); break;
-            case 'd': case 'D': {
+            case 'a': case 'A': optionAvailable(seats); break;//(3)
+            case 'b': case 'B': optionAutoArrange(seats); break;//(4)
+            case 'c': case 'C': optionManualChoose(seats); break;//(5)
+            case 'd': case 'D': //(6)
+			{
                 char c2;
                 do {
                     printf("Continue? (y/n): ");
@@ -233,7 +235,7 @@ void commitSuggestions(int seats[ROWS][COLS], int suggestions[ROWS][COLS]) {
         if (suggestions[r][c]) seats[r][c]=1;
 }
 
-/*
+/*(7)
  * Description:
  *   This program implements a simple seat booking system for a 9กั9 venue.
  *   Features:
