@@ -51,14 +51,6 @@ int main(void) {
     /* Initialize 10 random reserved seats */
     initSeats(seats);
 
-    printf("----------[Booking System]----------\n");
-    printf("| a. Available seats               |\n");
-    printf("| b. Arrange for you              |\n");
-    printf("| c. Choose by yourself           |\n");
-    printf("| d. Exit                         |\n");
-    printf("------------------------------------\n");
-
-
    /* Main menu loop */
     do{
         clearScreen();
@@ -100,20 +92,20 @@ int main(void) {
 void displayWelcome() {
     printf("**************************************************\n");
     printf("*                                                *\n");
-    printf("*             W E L C O M E   T O               *\n");
+    printf("*             W E L C O M E   T O                *\n");
     printf("*                                                *\n");
-    printf("*          B O O K I N G   S Y S T E M          *\n");
+    printf("*          B O O K I N G   S Y S T E M           *\n");
     printf("*                                                *\n");
-    printf("*           Developed by: [Your Name]           *\n");
+    printf("*           Developed by: Marx                   *\n");
     printf("*                                                *\n");
-    printf("*         University: Tatung University         *\n");
-    printf("*          Department: Electrical Eng.          *\n");
+    printf("*         University: Tatung University          *\n");
+    printf("*          Department: Electrical Eng.           *\n");
     printf("*                                                *\n");
-    printf("*           Secure Access Required              *\n");
-    printf("*            Please Enter 4-digit               *\n");
-    printf("*                Password:                      *\n");
+    printf("*           Secure Access Required               *\n");
+    printf("*            Please Enter 4-digit                *\n");
+    printf("*                Password:                       *\n");
     printf("*                                                *\n");
-    printf("*   Enjoy your day and secure your tickets!      *\n");
+    printf("*              Enjoy your day!                   *\n");
     printf("*  Designed for Students: Practical and Fun!     *\n");
     printf("**************************************************\n");
     printf("**************************************************\n");
