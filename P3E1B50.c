@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+/*
+Why #include <time.h>
+Get the current time as a random number seed
+srand(time(NULL)); This program will use the "current time (seconds)" as the random number seed to ensure 
+that the seat allocation is different each time rand() is executed, 
+increasing authenticity and fairness.
+The time functions are defined in <time.h>
+If <time.h> is not introduced, the compiler will not find the declaration of time(), 
+resulting in a compilation error.
+*/ 
 
 #ifdef _WIN32
   #define CLEAR_CMD "cls"
