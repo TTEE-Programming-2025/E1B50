@@ -222,3 +222,46 @@ void commitSuggestions(int seats[ROWS][COLS], int suggestions[ROWS][COLS]) {
     int r,c; for(r=0;r<ROWS;r++) for(c=0;c<COLS;c++)
         if (suggestions[r][c]) seats[r][c]=1;
 }
+
+/*
+ * Description:
+ *   This program implements a simple seat booking system for a 9¡Ñ9 venue.
+ *   Features:
+ *     1. Displays a custom ASCII-art welcome screen (>=20 lines) and prompts for
+ *        a 4-digit password (default 2025). Allows up to 3 attempts.
+ *     2. Clears the screen and shows the main menu:
+ *          a. Available seats
+ *          b. Arrange for you
+ *          c. Choose by yourself
+ *          d. Exit
+ *     3. ¡§a¡¨: Show current seats (randomly reserve 10 seats on startup).
+ *     4. ¡§b¡¨: Ask number of seats (1¡V4), auto-assign continuous seats (¡¥@¡¦),
+ *        confirm with user, then commit (¡¥@¡¦ ¡÷ ¡¥*¡¦).
+ *     5. ¡§c¡¨: Let user input specific seats (e.g. ¡§1-2¡¨), validate, display ¡¥@¡¦,
+ *        then commit on confirmation.
+ *     6. ¡§d¡¨: Ask ¡§Continue? (y/n)¡¨, loop or exit accordingly.
+ *
+ * Reflection and Discussion:
+ *   Writing this project taught me how to manage 2D arrays, randomization,
+ *   user input validation, and clear-screen techniques across platforms. I learned
+ *   to structure menu-driven programs with clear modular functions and comments.
+ *
+ *   Discussion:
+ *   - The use of a 2D int array simplifies seat state management (0 = free,
+ *     1 = reserved).
+ *   - Suggestions are tracked separately until confirmed, avoiding partial
+ *     state changes.
+ *   - Random seat assignment balances simplicity and user expectations, though
+ *     in a real system, more intelligent algorithms would be required.
+ *   - Input validation is critical: both scanf return values and range checks
+ *     are used to prevent invalid operations.
+ *
+ *   Reflections:
+ *   1. Ensuring a clear user interface (ASCII-art, prompts) improves usability.
+ *   2. Modular functions (display, init, show, options) keep code readable and
+ *      maintainable.
+ *   3. Handling edge cases (three failed password attempts, invalid menu choices,
+ *      seat conflicts) strengthens program robustness.
+ *   4. Future improvements could include persistent storage (file I/O), a GUI,
+ *      or a web-based interface.
+ */
