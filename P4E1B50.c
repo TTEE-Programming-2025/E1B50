@@ -21,14 +21,16 @@ for(i=0;i<n;i++){
 	printf("    ~~ // /||||||\\\\\\   // // ~    \n");
 	printf("//.,,.//,//|||||||\\\\\\,//.//,//,/,\n");
 	printf("請輸入密碼:");
+	
 do{
-	for(int i=0;i<4;i++){
+	int i;
+	for(i=0;i<4;i++){
         password[i]=getche();
     }
  	if(password[0]=='2'&&password[1]=='0'&&password[2]=='2'&& password[3]=='5'){
  		system("cls");
  		printf("\n歡迎！按任意鍵進入主選單:\n");
- 		getchar();
+ 		getch();
  		break;
  	}
  	else{
@@ -44,11 +46,11 @@ do{
 	
 	
 	printf("------------[Grade System]----------\n");
-    printf("| a. Enter student grades      |\n");
-    printf("| b. Display student grades    |\n");
-    printf("| c. Search for student grades |\n");
-    printf("| d. Grade ranking             |\n");
-    printf("| e. Exit system               |\n");
+    printf("| a. Enter student grades          |\n");
+    printf("| b. Display student grades        |\n");
+    printf("| c. Search for student grades     |\n");
+    printf("| d. Grade ranking                 |\n");
+    printf("| e. Exit system                   |\n");
     printf("------------------------------------\n");
     
     return 0;
