@@ -2,28 +2,32 @@
 #include<stdio.h>
 #include<conio.h>
 #include<string.h> 
-//定義學生資料用結構的陣列實現且定義全域變數 
-struct data{
-		char name[20];
-		char id[7];
-		int math;
-		int phy;
-		int eng;
-		float avg;
-	}student[10];
+
+struct 	data{
+			char name[20];
+			char id[7];
+			int math;
+			int phy;
+			int eng;
+			float avg;
+			};//定義學生資料用結構的陣列實現 
+
+struct data student[10]; //定義全域變數
+int n;
 
 //a
 void a(){
 system("cls");//清除畫面
-    int i,n;
+    int i;
 	do{
 		printf("輸入5-10的整數:");//輸入5-10的整數
 		scanf("%d",&n);
+		fflush(stdin); //防止緩衝區殘留
 		if(n>=5&&n<=10){
 		break;
 		}
 		else{
-		printf("\n輸入錯誤,請改正\n"); 
+		printf("輸入錯誤,請改正\n"); 
 		}
 	}while(n<5||n>10);
 
@@ -33,11 +37,13 @@ for(i=0;i<n;i++){
 
 	printf("第 %d 位學生姓名:",i+1);//輸入姓名
 	scanf("%s",student[i].name);
+	fflush(stdin); //防止緩衝區殘留
 	system("cls");//清除畫面
 
 	do{
-		printf("第 %d 位學生學號:",i+1);//輸入學號（六位數)
+		printf("第 %d 位學生學號（六位):",i+1);//輸入學號（六位)
 	scanf("%s",student[i].id);
+	fflush(stdin); //防止緩衝區殘留
 	if(strlen(student[i].id)==6){
 		break;
 	}
@@ -50,8 +56,9 @@ for(i=0;i<n;i++){
 	system("cls");//清除畫面
 
 	do{
-	printf("第 %d 位學生數學成績:",i+1);//數學成績
+	printf("第 %d 位學生數學成績(0-100):",i+1);//數學成績(0-100)
 	scanf("%d",&student[i].math);
+	fflush(stdin); //防止緩衝區殘留
 	if(student[i].math>=0&&student[i].math<=100){
 		break;
 	}
@@ -63,8 +70,9 @@ for(i=0;i<n;i++){
 system("cls");//清除畫面
 
 	do{
-	printf("第 %d 位學生物理成績:",i+1);//物理成績
+	printf("第 %d 位學生物理成績(0-100):",i+1);//物理成績(0-100)
 	scanf("%d",&student[i].phy);
+	fflush(stdin); //防止緩衝區殘留
 	if(student[i].phy>=0&&student[i].phy<=100){
 		break;
 	}
@@ -76,8 +84,9 @@ system("cls");//清除畫面
 
 
 	do{
-	printf("第 %d 位學生英文成績:",i+1);//英文成績
+	printf("第 %d 位學生英文成績(0-100):",i+1);//英文成績(0-100)
 	scanf("%d",&student[i].eng);
+	fflush(stdin); //防止緩衝區殘留
 	if(student[i].eng>=0&&student[i].eng<=100){
 		break;
 	}
@@ -91,13 +100,26 @@ system("cls");//清除畫面
 }
 }
 
+//b顯示所有學生姓名學號成績與平均
+void b(){
+	int i;
+        for(i=0;i<n;i++){
+            student[i].avg=(student[i].math+student[i].phy+student[i].eng)/3.0; //計算平均
+            printf("姓名:%s 學號:%d 數學:%d 物理:%d 英文: %d 平均:%.1f\n",student[i].name,student[i].id,student[i].math,student[i].phy,student[i].eng,student[i].avg);
+            printf("\n");
+        }
+        system("pause");//停止畫面
+		system("cls");//清除畫面	        
+}
+
+
 	
 int main(void){
  char password[4];
- int n=15,i,j,a,count;
+ int m=15,i,j,count;
  printf("        E1B50王楊馥華\n");
-for(i=0;i<n;i++){
-	for(j=0;j<n-i-1;j++){
+for(i=0;i<m;i++){
+	for(j=0;j<m-i-1;j++){
 		printf(" ");
 	}
 	for(j=0;j<2*i+1;j++){
@@ -119,7 +141,7 @@ do{
     }
  	if(password[0]=='2'&&password[1]=='0'&&password[2]=='2'&& password[3]=='5'){
  		system("cls");
- 		printf("\n歡迎！按任意鍵進入主選單:\n");
+ 		printf("歡迎！按任意鍵進入主選單:\n");
  		getch();
  		break;
  	}
@@ -133,8 +155,9 @@ do{
 	}        
 	
 }while(count<3);
-	
-	
+
+	system("cls");
+while(1){
 	printf("------------[Grade System]----------\n");
     printf("| a. Enter student grades          |\n");
     printf("| b. Display student grades        |\n");
@@ -144,16 +167,30 @@ do{
     printf("------------------------------------\n");
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    char f;
+	printf("請輸入a-e:");
+	scanf("%c",&f); 
+	fflush(stdin); //防止緩衝區殘留
+	system("cls");//清除畫面
+	switch(f){
+		case 'a':
+			a();
+			break;
+		case 'b':
+			b();
+			break;
+	/*	case 'c':
+			c();
+			break;
+		case 'd':
+			d();
+			break;
+		case 'e':
+			e();
+			break;
+			*/
+	}
+}
     return 0;
 }
 
